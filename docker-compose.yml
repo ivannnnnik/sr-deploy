@@ -65,5 +65,18 @@ services:
     depends_on:
       - postgres
 
+  study-service:
+    build: ../sr-study-service
+    ports:
+      - "50053:50051"
+    environment:
+      DB_HOST: postgres      
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_PORT: 5432
+      DB_DATABASE: sr_study_db
+    depends_on:
+      - postgres
+
 volumes:
   pgdata:
