@@ -75,8 +75,10 @@ services:
       DB_PASSWORD: postgres
       DB_PORT: 5432
       DB_DATABASE: sr_study_db
+      QUESTION_SERVICE_ADDR: question-service:50051
     depends_on:
       - postgres
+      - question-service
 
 volumes:
   pgdata:
