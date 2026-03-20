@@ -76,9 +76,11 @@ services:
       DB_PORT: 5432
       DB_DATABASE: sr_study_db
       QUESTION_SERVICE_ADDR: question-service:50051
+      KAFKA_BROKERS: kafka:29092
     depends_on:
       - postgres
       - question-service
+      - kafka
 
 volumes:
   pgdata:
